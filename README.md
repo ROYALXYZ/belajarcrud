@@ -19,7 +19,7 @@ untuk instruktur itu password admin username admin dan siswa itu (buatsendiri aj
 
 5.cara buat user instruktur gimana mas ?
 
-kamu masuk ke register.php dan cari deh ini  <!-- <option value="Instruktur">Instruktur</option> --> ini aku command biar orang ga bisa buat instruktur
+kamu masuk ke register.php dan cari deh ini   <option value="Instruktur">Instruktur</option> (ini aku command biar orang ga bisa buat instruktur)
 
 6.buatnya nyari source darimana ?
 dari chatgpt dan ngambil landingpage di github punya org hehe
