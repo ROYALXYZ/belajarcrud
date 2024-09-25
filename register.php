@@ -107,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <select class="form-control" name="level" required>
                 <option value="" disabled selected>Kamu Adalah?</option>
                 <option value="Siswa">Siswa</option>
+                <!-- <option value="Instruktur">Instruktur</option> -->
             </select>
             <label for="inputLevel"></label>
         </div>
