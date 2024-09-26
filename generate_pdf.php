@@ -15,16 +15,19 @@ $pdf->SetFont('Arial', 'B', 12);
 
 // Menambahkan Judul
 $judul = sprintf(
-    'Data Nilai Kelas %s - Tanggal %s Hingga %s',
+    'Data Nilai Ketarunaan Kelas %s',
     $kelas_filter,
     $date_from,
     $date_to
 );
 $pdf->Cell(0, 10, $judul, 0, 1, 'C');
-
+$pdf->Image('images/logosmk3.png', 138, 19, 20, 20);
 
 // Menambahkan Header Tabel
+
 $pdf->SetFont('Arial', 'B', 10);
+$pdf->Ln(30); // Beri jarak dari gambar
+
 $pdf->Cell(30, 10, 'No Absen', 1);
 $pdf->Cell(50, 10, 'Nama', 1);
 $pdf->Cell(30, 10, 'Kelas', 1);
@@ -60,6 +63,7 @@ $result = mysqli_query($koneksi, $query);
 if (!$result) {
     die('Query error: ' . mysqli_error($koneksi));
 }
+
 
 while ($row = mysqli_fetch_assoc($result)) {
     $pdf->Cell(30, 10, $row['no_absen'], 1);

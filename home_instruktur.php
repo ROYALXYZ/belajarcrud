@@ -4,6 +4,7 @@ include 'navbar.php';
 
 
 
+
 // Pastikan hanya instruktur yang boleh mengakses
 if ($_SESSION['level'] !== 'Instruktur') {
     header('Location: index.php');
@@ -23,7 +24,9 @@ if (isset($_POST['edit'])) {
 
     $query = "UPDATE data_nilai SET no_absen='$no_absen', nama='$nama', push_up='$push_up', pull_up='$pull_up', lari_12menit='$lari_12menit', sit_up='$sit_up' WHERE id='$id' AND instruktur_id='$instruktur_id'";
     if (!mysqli_query($koneksi, $query)) {
-        echo "Error: " . mysqli_error($koneksi);
+        echo "<div class='alert alert-danger'>Terjadi kesalahan saat menyimpan data. Silakan coba lagi nanti.</div>";
+    } else {
+        echo "<div class='alert alert-success'>Data berhasil disimpan!</div>";
     }
 }
 
@@ -201,6 +204,7 @@ $total_pages = ceil($total / $limit);
     align-items: center; /* Memusatkan secara vertikal */
     cursor: pointer; /* Kursor berubah menjadi pointer */
     transition: background 0.3s ease-in; /* Transisi halus untuk efek hover */
+    margin-top:5px;
 }
 
 .btnpdf:hover {
@@ -213,6 +217,7 @@ $total_pages = ceil($total / $limit);
     background: linear-gradient(to right, #8E9E6B, #636e4a); /* Efek gradien */
     border: none;
     transition: background 0.3s ease-in; /* Transisi halus untuk efek hover */
+    margin-top:5px;
 }
 
 .btn:hover {
@@ -225,9 +230,16 @@ $total_pages = ceil($total / $limit);
     max-width: 80%; /* Menjaga ukuran ikon agar sesuai */
     max-height: 80%; /* Menjaga ukuran ikon agar sesuai */
 }
-
 .warnabtn{
     color:#fff;
+    border: none;
+    
+}
+
+.warnabtn:hover{
+    color:#fff;
+    border: none;
+    
 }
 
 .main-card {
@@ -267,7 +279,7 @@ $total_pages = ceil($total / $limit);
                         <input type="text" name="search" class="form-control" placeholder="Cari berdasarkan No Absen, Nama, atau Kelas" value="<?php echo htmlspecialchars($search); ?>">
                         <div class="form-group">
                             <select name="kelas_filter" class="form-control">
-                                <option value="">Semua Kelas</option>
+                                <option value="">Pilih Kelas</option>
                                 <option value="X TJ" <?php echo ($kelas_filter === 'X TJ') ? 'selected' : ''; ?>>X TJ</option>
                                 <option value="X BP" <?php echo ($kelas_filter === 'X BP') ? 'selected' : ''; ?>>X BP</option>
                                 <option value="X TE1" <?php echo ($kelas_filter === 'X TE1') ? 'selected' : ''; ?>>X TE1</option>
@@ -291,10 +303,12 @@ $total_pages = ceil($total / $limit);
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="date" name="date_from" class="form-control" placeholder="Tanggal Dari" value="<?php echo htmlspecialchars($date_from); ?>">
+                            <input type="date" name="date_from" class="form-control" placeholder="Tanggal Darisdsd" value="<?php echo htmlspecialchars($date_from); ?>">
+                            <small>Tanggal Dari</small>
+                            <small> - Sampai</small>
                         </div>
-                        <small>-</small>
                         <input type="date" name="date_to" class="form-control" placeholder="Tanggal Sampai" value="<?php echo htmlspecialchars($date_to); ?>">
+                        
                         <button type="submit" class="btn btn-primary">Cari</button>
                         <a href="generate_pdf.php?search=<?php echo urlencode($search); ?>&date_from=<?php echo urlencode($date_from); ?>&date_to=<?php echo urlencode($date_to); ?>&kelas_filter=<?php echo urlencode($kelas_filter); ?>" class="btnpdf btn-primary"><i class="fa fa-print" style="font-size:24px"></i></a>
                     </div>
@@ -334,7 +348,7 @@ $total_pages = ceil($total / $limit);
                                 <td><?php echo htmlspecialchars($row['tanggal']); ?></td>
                                 <td>
                                     <a href="edit_data.php?id=<?php echo $row['id']; ?>" class="btn btn-warning warnabtn">Edit</a>
-                                    <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger">Hapus</a>
+                                    <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger warnabtn">Hapus</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -373,3 +387,4 @@ $total_pages = ceil($total / $limit);
         <script src="js/template.js"></script>
     </body>
 </html>
+
