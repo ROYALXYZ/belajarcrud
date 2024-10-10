@@ -111,7 +111,8 @@ $total_pages = ceil($total / $limit);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home Instruktur</title>
+    <title>Instruktur</title>
+    <link rel="icon" href="images/logosmk3.png" type="">
     <link rel="stylesheet" href="vendors/owl-carousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/css/owl.theme.default.css">
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
@@ -120,10 +121,7 @@ $total_pages = ceil($total / $limit);
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 10px; /* Padding di dalam footer */
+       
 }
 
         .custom-jumbotron {
@@ -210,7 +208,7 @@ $total_pages = ceil($total / $limit);
 .btnpdf:hover {
     background: linear-gradient(to right, #636e4a, #8E9E6B); /* Efek hover dengan gradien terbalik */
     border: none;
-    border-width: small;
+    border-width: small;    
 }
 
 .btn {
@@ -310,7 +308,8 @@ $total_pages = ceil($total / $limit);
                         <input type="date" name="date_to" class="form-control" placeholder="Tanggal Sampai" value="<?php echo htmlspecialchars($date_to); ?>">
                         
                         <button type="submit" class="btn btn-primary">Cari</button>
-                        <a href="generate_pdf.php?search=<?php echo urlencode($search); ?>&date_from=<?php echo urlencode($date_from); ?>&date_to=<?php echo urlencode($date_to); ?>&kelas_filter=<?php echo urlencode($kelas_filter); ?>" class="btnpdf btn-primary"><i class="fa fa-print" style="font-size:24px"></i></a>
+                        <a href="generate_pdf.php?search=<?php echo urlencode($search); ?>&date_from=<?php echo urlencode($date_from); ?>&date_to=<?php echo urlencode($date_to); ?>&kelas_filter=<?php echo urlencode($kelas_filter); ?>"
+                        class="btnpdf btn-primary"><i class="fa fa-print" style="font-size:24px"></i></a>
                     </div>
                 </form>
 
@@ -377,11 +376,11 @@ $total_pages = ceil($total / $limit);
         </div>
         <!-- END OF CARD -->
 
-        <!-- Footer -->
-        <div class="footer mt-4">
-            <p>&copy; 2024 Rangga Pasha C.W</p>
-        </div>
-        <!-- end of footer -->
+       <?php
+       
+       include 'footer.php'
+
+       ?>
 
         <script src="js/vendor.bundle.base.js"></script>
         <script src="js/template.js"></script>

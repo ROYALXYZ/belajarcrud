@@ -104,13 +104,16 @@ $avg_values = mysqli_fetch_assoc($avg_result);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data Nilai</title>
+    <title>Siswa</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vendors/owl-carousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="vendors/owl-carousel/css/owl.theme.default.css">
     <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="vendors/aos/css/aos.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
         /* Style untuk kartu utama */
         .profil {
@@ -125,13 +128,6 @@ $avg_values = mysqli_fetch_assoc($avg_result);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-top: 20px;
-        }
-        /* Style untuk footer */
-        .footer {
-            background-color: #f8f9fa;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 40px; /* Menambahkan jarak antara tabel dan footer */
         }
         .pagination {
             display: flex;
@@ -213,6 +209,7 @@ $avg_values = mysqli_fetch_assoc($avg_result);
     border: none;
     color: #fff;
 }
+
     </style>
     <script>
         // Fungsi untuk melakukan sorting pada tabel berdasarkan kolom dan jenis sorting (asc/desc)
@@ -371,10 +368,11 @@ $avg_values = mysqli_fetch_assoc($avg_result);
     </div>
 </div>
 
-<!-- Footer -->
-<div class="footer">
-<p>&copy; 2024 Rangga Pasha C.W</p>
-</div>
-<!-- end of footer -->
+<?php
+       
+       include 'footer.php'
+       
+       ?>
+
 </body>
 </html>

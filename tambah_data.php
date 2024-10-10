@@ -38,6 +38,7 @@ if (isset($_POST['add'])) {
 <head>
     <meta charset="UTF-8">
     <title>Tambah Data</title>
+    <link rel="icon" href="images/logosmk3.png" type="">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
