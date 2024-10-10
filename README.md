@@ -25,6 +25,9 @@ masuk ke register.php dan cari option register as instruktur yang tercommand (di
 6.buatnya nyari source darimana ?
 dari chatgpt dan ngambil landingpage di github punya org hehe
 
+7.mau liat demonya bang
+sungg aja ke ranggapasha.my.id (kalo error dm ig)
+
 ==========================================================================================================================================
 
 for more information
