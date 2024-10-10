@@ -1,4 +1,5 @@
-#untukpenerusku
+
+
 FAQ
 
 1.Siapa yang buat ?
@@ -19,11 +20,13 @@ untuk instruktur itu password admin username admin dan siswa itu (buatsendiri aj
 
 5.cara buat user instruktur gimana mas ?
 
-kamu masuk ke register.php dan cari deh ini   <option value="Instruktur">Instruktur</option> (ini aku command biar orang ga bisa buat instruktur)
+masuk ke register.php dan cari option register as instruktur yang tercommand (dicommand biar user ga bisa buat instruktur)
 
 6.buatnya nyari source darimana ?
 dari chatgpt dan ngambil landingpage di github punya org hehe
 
 ==========================================================================================================================================
 
-dm me if u have any question  ig @ranggapashacw
+for more information
+
+ ig @ranggapashacw
