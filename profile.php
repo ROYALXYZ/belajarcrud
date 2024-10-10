@@ -1,8 +1,8 @@
 <?php 
-$server = "localhost";
-$user = "root";
-$password = "";
-$database = "dblatihan";
+$server = "sql103.lamanrasmi.com";
+$user = "lmnr_37478254";
+$password = "ranggacpanel";
+$database = "lmnr_37478254_ketarunaan";
 
 $koneksi = mysqli_connect($server, $user, $password, $database) or die(mysqli_error($koneksi));
 
@@ -20,7 +20,7 @@ if ($_SESSION['level'] === 'Instruktur') {
     $fromPage = isset($_GET['from']) ? $_GET['from'] : 'home_siswa.php';
 } else {
     // Default to a fallback page if needed
-    $fromPage = 'home.php'; // or wherever you want to redirect to
+    $fromPage = 'index.html'; // or wherever you want to redirect to
 }
 
 
@@ -338,11 +338,19 @@ $hasProfilePicture = !empty($user['profile_picture']);
                 </form>
             <?php endif; ?>
 
+           
+
             <p class="lead mt-4">
                 <a class="btn btn-primary btn-sm" href="<?php echo htmlspecialchars($fromPage); ?>" role="button"> <i class="fa-solid fa-chevron-left"></i> Kembali </a>
                 <a class="btn btn-danger btn-sm" href="logout.php" role="button">Logout <i class="fa-solid fa-exclamation"></i></a>
             </p>
         </div>
+         <?php if ($_SESSION['level'] === 'Instruktur'): ?>
+                <small>Hanya insturktur yang bisa melihat ini</small>
+                <br>
+                <a class="btn btn-info btn-sm" href="home_siswa.php" role="button">Melihat Sebagai Siswa</a>
+                 <a class="btn btn-info btn-sm" href="home_instruktur.php" role="button">Kembali Ke Halaman Instruktur</a>
+            <?php endif; ?>
     </div>
 </div>
 

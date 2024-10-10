@@ -7,7 +7,7 @@ include 'navbar.php';
 
 // Pastikan hanya instruktur yang boleh mengakses
 if ($_SESSION['level'] !== 'Instruktur') {
-    header('Location: index.php');
+    header('Location: login.php');
     exit();
 }
 
@@ -125,10 +125,11 @@ $total_pages = ceil($total / $limit);
 }
 
         .custom-jumbotron {
-            background: rgb(0,9,1);
-            background: linear-gradient(121deg, rgba(0,9,1,1) 0%, rgba(12,205,8,1) 30%, rgba(228,255,0,1) 95%);
-            color: #fff;
+            background: rgb(1,1,9);
+            background: linear-gradient(90deg, rgba(1,1,9,1) 0%, rgba(9,9,121,1) 30%, rgba(255,0,194,1) 100%);
+            color: #ffffff;
             margin-top: 30px;
+            margin: 18px;
         }
         .custom-tambahdata {
             background-color: #1F3720;
@@ -347,12 +348,35 @@ $total_pages = ceil($total / $limit);
                                 <td><?php echo htmlspecialchars($row['tanggal']); ?></td>
                                 <td>
                                     <a href="edit_data.php?id=<?php echo $row['id']; ?>" class="btn btn-warning warnabtn">Edit</a>
-                                    <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');" class="btn btn-danger warnabtn">Hapus</a>
+                                   <a href="#" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $row['id']; ?>" class="btn btn-danger warnabtn deleteBtn">Hapus</a>
+
                                 </td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
                 </table>
+
+                <!-- Modal Konfirmasi Hapus -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                yakin ingin menghapus data ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <a href="" id="confirmDelete" class="btn btn-danger">Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                 <!-- Paginasi -->
                 <nav aria-label="Page navigation">
@@ -381,6 +405,15 @@ $total_pages = ceil($total / $limit);
        include 'footer.php'
 
        ?>
+
+    <script>
+    $(document).ready(function() {
+        $('.deleteBtn').click(function() {
+            var id = $(this).data('id');
+            $('#confirmDelete').attr('href', '?delete=' + id);
+        });
+    });
+</script>
 
         <script src="js/vendor.bundle.base.js"></script>
         <script src="js/template.js"></script>
