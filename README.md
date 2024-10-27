@@ -2,34 +2,32 @@
 
 FAQ
 
-1.Siapa yang buat ?
+1.aku
 
-Hai aku rangga dari kelas 12 teknik komputer jaringan smk 3 yogyakarta 
+Hai aku rangga 
 
 2.Ngapain buat ini ?
 
-aku buat ini karena tugas dari Mr.Brama Kurniawan dan ya , aku buat ini demi memenuhi tugas dari beliau
+karena tugas dari Mr.Brama Kurniawan dan ya , aku buat ini demi memenuhi tugas dari beliau
 
-3.Kapan kamu memulai dan menyelesaikan project ini
+3.start - end ?
 
-aku memulai project ini dari bulan agustus dan selesai pada september
+ dari bulan agustus - september
 
 4.Apa nama login as a instruktur dan siswa
 
-untuk instruktur itu password admin username admin dan siswa itu (buatsendiri ajalah kocakk)
+untuk instruktur password = instruktur username = instruktur
 
-5.cara buat user instruktur gimana mas ?
+5.cara buat akun as instruktur  ?
 
-masuk ke register.php dan cari option register as instruktur yang tercommand (dicommand biar user ga bisa buat instruktur)
+masuk ke register.php dan cari option register as instruktur yang tercommand 
 
-6.buatnya nyari source darimana ?
-dari chatgpt dan ngambil landingpage di github punya org hehe
+6.source darimana ?
+dari chatgpt 
 
 7.mau liat demonya bang
-sungg aja ke "ranggapasha.my.id" (kalo error dm ig)
+ ke "ranggapasha.my.id" , (any error please dm me!)
 
 ==========================================================================================================================================
-
-for more information
 
  ig @ranggapashacw
